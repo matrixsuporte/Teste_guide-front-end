@@ -1,0 +1,52 @@
+<div class="container-fluid">
+
+  <div class="d-flex">
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Quantidade</span>
+      </div>
+      <input type="text" [(ngModel)]="quantity" name="quantity" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3 mx-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Nomes</span>
+      </div>
+      <input type="text"  class="form-control" [(ngModel)]="names" name="names"  placeholder="separe os nomes por vírgulas Felipe, Paulo Coelho" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    
+    
+    <button class="btn btn-outline-info my-2 my-sm-0" (click)="searchAuthor()">Buscar</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let author of listAuthors" scope="col">
+      <tr>
+        <th scope="row">{{author.id}}</th>
+        <td>{{ author.name}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let author of listAuthorsHandle" scope="col">
+      <tr>
+        <td>{{ author}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
